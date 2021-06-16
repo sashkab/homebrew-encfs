@@ -14,10 +14,6 @@ class Encfs < Formula
   depends_on "gettext"
   depends_on "openssl@1.1"
 
-  on_linux do
-    depends_on "libfuse"
-  end
-
   def install
     ENV.cxx11
 
