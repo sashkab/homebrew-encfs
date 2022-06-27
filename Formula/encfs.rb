@@ -6,13 +6,18 @@ class Encfs < Formula
   # The code comprising the EncFS library (libencfs) is licensed under the LGPL.
   # The main programs (encfs, encfsctl, etc) are licensed under the GPL.
   license "GPL-3.0-only"
-  revision 4
+  revision 5
   head "https://github.com/vgough/encfs.git"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "openssl@1.1"
+
+  patch do
+    url "https://github.com/vgough/encfs/commit/406b63bfe234864710d1d23329bf41d48001fbfa.patch?full_index=1"
+    sha256 "7d9febdb993e46ac6d548114837faff13c58b673e5c145e818f4d451fb2eae51"
+  end
 
   def install
     ENV.cxx11
